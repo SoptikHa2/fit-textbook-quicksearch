@@ -10,16 +10,11 @@
     </head>
     <body>
         <h1>FIT Textbook Search</h1>
-        <p>Make sure you are authenticated and textbook is available.</p>
+        <p>Make sure you are authenticated and have access to the textbook.</p>
         <noscript>
             <p style="color: red;">This site will not work without JS enabled.</p>
         </noscript>
-        <input type="text" id="searchField" autofocus placeholder="Kritéria konvergence"></input>
-        <p>Search terms separated by space are ORed. Use backslash (\) to treat space as regular character.</p>
-        <p>
-            <input type="checkbox" id="regexEnabled" />
-            <label for="regexEnabled">Treat search term as extended regex (see <code>grep(1)</code>)</label>
-        </p>
+        <p><input type="text" id="searchField" autofocus placeholder="Kritéria konvergence"></input></p>
         <div class="results">
 
         </div>

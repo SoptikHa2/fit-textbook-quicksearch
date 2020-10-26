@@ -34,5 +34,6 @@ input#searchField {
 }
 .textbookSelector.active {
     background-color: lightgreen;
+    cursor: unset;
 }
 
