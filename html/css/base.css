@@ -1,0 +1,38 @@
+body {
+	color: #444;
+	font-size: 16px;
+	line-height: 1.6;
+	margin: 40px auto;
+	max-width: 800px;
+	padding: 0 10px;
+}
+
+input#searchField {
+    width: 100%;
+    padding: 1em;
+}
+
+.selectTextbook {
+    border: 1px solid black;
+    padding: 1em;
+    text-align: center;
+}
+.selectTextbook > div {
+    display: flex;
+    width: 100%;
+}
+.selectTextbook > div > .title {
+    text-align: center;
+    width: 100%;
+}
+.textbookSelector {
+    padding: 1em;
+    background-color: lightblue;
+    margin: 0.2em;
+    flex: 1;
+    cursor: pointer;
+}
+.textbookSelector.active {
+    background-color: lightgreen;
+}
+

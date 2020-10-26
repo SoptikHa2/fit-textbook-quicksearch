@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>FIT Textbook Search</title>
+        
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0">
+        <link rel="icon" type="image/png" href="img/favicon.png" sizes="64x64">
+        <link rel="stylesheet" href="css/base.css">
+    </head>
+    <body>
+        <h1>FIT Textbook Search</h1>
+        <p>Make sure you are authenticated and textbook is available.</p>
+        <noscript>
+            <p style="color: red;">This site will not work without JS enabled.</p>
+        </noscript>
+        <input type="text" id="searchField" autofocus placeholder="Kritéria konvergence"></input>
+        <p>Search terms separated by space are ORed. Use backslash (\) to treat space as regular character.</p>
+        <p>
+            <input type="checkbox" id="regexEnabled" />
+            <label for="regexEnabled">Treat search term as extended regex (see <code>grep(1)</code>)</label>
+        </p>
+        <div class="results">
+
+        </div>
+        <div class="selectTextbook">
+            <div>
+                <div class="title">
+                    <h2>Select textbook</h2>
+                </div>
+            </div>
+            <div>
+                <div class="textbookSelector active" id="zma">Základy Matematické Analýzy</div>
+                <div class="textbookSelector">TBA</div>
+            </div>
+        </div>
+        <!-- Tracking -->
+        <script src="https://soptik.tech/js/big-brother.js" async></script>
+    </body>
+</html>
