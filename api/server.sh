@@ -25,7 +25,7 @@ case $request in
         fi
         destinationWithoutFirstSlash="${destination#/}"
         textbookName="${destinationWithoutFirstSlash%%/*}"
-        searchTermWithoutFirstSlash="${destinationWithoutFirstSlash#/}"
+        searchTermWithoutFirstSlash="${destinationWithoutFirstSlash#*/}"
         searchTerm="${searchTermWithoutFirstSlash%%/*}"
 
         case $textbookName in
