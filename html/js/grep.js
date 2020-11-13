@@ -16,6 +16,7 @@ function search(e, text) {
 	request.onload = function() {
         resultDiv.innerHTML = '';
 		if(this.status >= 200 && this.status < 400) {
+            isSearchRunning = false;
 			let response = this.response;
             let lines = response.split('\n');
             for ( lineIdx in lines ) {
@@ -24,7 +25,6 @@ function search(e, text) {
                 let link = line.split(' ')[1];
                 insertResult(numberOfRecords, link);
             }
-            isSearchRunning = false;
 		} else {
 		}
         isSearchRunning = false;
