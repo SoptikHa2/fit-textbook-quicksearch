@@ -50,7 +50,7 @@ function insertResult(numOfResults, link) {
 }
 
 function displayIframe(link) {
-    iframeDiv.innerHTML = `<iframe src=https://${link}></iframe>`;
+    iframeDiv.innerHTML = `<p><a href="https://${link}" target="_blank">Open in new tab</a></p><iframe src=https://${link}></iframe>`;
 }
 
 /// This updates result name after real name is fetched from server
