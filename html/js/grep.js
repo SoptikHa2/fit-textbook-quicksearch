@@ -1,4 +1,4 @@
-const url = "http://localhost:9921/";
+const url = "https://grep.fit.soptik.tech/";
 isSearchRunning = false;
 currentlySelectedTextbook = "ZMA";
 resultDiv = document.getElementById('result');
