@@ -7,8 +7,10 @@ function search(e, text) {
     if (e.preventDefault) e.preventDefault();
     if (isSearchRunning) return false;
 
+    iframeDiv.innerHTML = '';
+
     // Strip diacritics from search text
-    
+    text = text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
     // Encode search term to base64
     const searchTermB64 = btoa(text);
@@ -18,8 +20,8 @@ function search(e, text) {
 
 	request.onload = function() {
         resultDiv.innerHTML = '';
+        isSearchRunning = false;
 		if(this.status >= 200 && this.status < 400) {
-            isSearchRunning = false;
 			let response = this.response;
             let lines = response.split('\n');
             for ( lineIdx in lines ) {
@@ -28,9 +30,7 @@ function search(e, text) {
                 let link = line.split(' ')[1];
                 insertResult(numberOfRecords, link);
             }
-		} else {
 		}
-        isSearchRunning = false;
 	}
     request.onerror = function() {
         isSearchRunning = false;
@@ -46,6 +46,10 @@ function search(e, text) {
 function insertResult(numOfResults, link) {
     let tempName = link.split('/')[link.split('/').length-1];
     resultDiv.innerHTML += `<a href='https://${link}' target='_blank'><div id='result-${tempName}' class="subresult"><h3>${tempName}</h3></div></a>`;
+}
+
+function displayIframe(link) {
+    iframeDiv.innerHTML = `<iframe src=${link}></iframe>`;
 }
 
 /// This updates result name after real name is fetched from server
