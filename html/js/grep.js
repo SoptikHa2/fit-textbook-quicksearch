@@ -45,7 +45,7 @@ function search(e, text) {
 
 function insertResult(numOfResults, link) {
     let tempName = link.split('/')[link.split('/').length-1];
-    resultDiv.innerHTML += `<a href='https://${link}' target='_blank'><div id='result-${tempName}' class="subresult"><h3>${tempName}</h3></div></a>`;
+    resultDiv.innerHTML += `<a href='https://${link}' onclick='displayIframe(${link}); return false;'><div id='result-${tempName}' class="subresult"><h3>${tempName}</h3></div></a>`;
 }
 
 function displayIframe(link) {
