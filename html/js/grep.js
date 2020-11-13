@@ -7,6 +7,9 @@ function search(e, text) {
     if (e.preventDefault) e.preventDefault();
     if (isSearchRunning) return false;
 
+    // Strip diacritics from search text
+    
+
     // Encode search term to base64
     const searchTermB64 = btoa(text);
 
