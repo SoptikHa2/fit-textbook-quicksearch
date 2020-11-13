@@ -8,6 +8,7 @@ function search(e, text) {
     if (isSearchRunning) return false;
 
     iframeDiv.innerHTML = '';
+    resultDiv.innerHTML = 'Loading...';
 
     // Strip diacritics from search text
     text = text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
