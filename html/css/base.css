@@ -39,11 +39,18 @@ input#searchField {
 .resultPage {
     display: flex;
 }
-.resultPage div {
+.resultPage .result {
     flex: 1;
+}
+.resultPage .iframeDiv {
+    flex: 2;
 }
 iframe {
     width: 100%;
     min-height: 60vh;
+}
+.result a {
+    color: orangered;
+    text-decoration: none;
 }
 
