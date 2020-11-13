@@ -16,7 +16,7 @@ function search(e, text) {
 	request.onload = function() {
         resultDiv.innerHTML = '';
 		if(this.status >= 200 && this.status < 400) {
-			let response = atob(this.response);
+			let response = this.response;
             let lines = response.split('\n');
             for ( lineIdx in lines ) {
                 let line = lines[lineIdx];
