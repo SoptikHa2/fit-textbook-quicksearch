@@ -49,7 +49,7 @@ function insertResult(numOfResults, link) {
 }
 
 function displayIframe(link) {
-    iframeDiv.innerHTML = `<iframe src=${link}></iframe>`;
+    iframeDiv.innerHTML = `<iframe src=https://${link}></iframe>`;
 }
 
 /// This updates result name after real name is fetched from server
