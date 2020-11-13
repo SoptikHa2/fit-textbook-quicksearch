@@ -27,12 +27,10 @@ case $request in
         textbookName="${destinationWithoutFirstSlash%%/*}"
         searchTermWithoutFirstSlash="${destinationWithoutFirstSlash#*/}"
         searchTerm="${searchTermWithoutFirstSlash%%/*}"
-        echo "Request $searchTerm for $textbookName" >&2
 
         case $textbookName in
             ZMA)
                 searchResult="$(./ZMA.sh "$searchTerm")"
-                echo "Result $searchResult" >&2
                 printf 'HTTP/1.1 200 OK\r\n\r\n%s' "$searchResult"
             ;;
             *)
