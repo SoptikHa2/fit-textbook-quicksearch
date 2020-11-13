@@ -24,7 +24,7 @@ function search(e, text) {
                 let link = line.split(' ')[1];
                 insertResult(numberOfRecords, link);
             }
-            alert(response);
+            isSearchRunning = false;
 		} else {
 		}
         isSearchRunning = false;
