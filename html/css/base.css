@@ -49,8 +49,8 @@ iframe {
     width: 100%;
     min-height: 60vh;
 }
-.result a {
-    color: orangered;
+a {
+    color: darkgreen;
     text-decoration: none;
 }
 
