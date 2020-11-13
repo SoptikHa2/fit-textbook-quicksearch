@@ -14,8 +14,11 @@
         <noscript>
             <p style="color: red;">This site will not work without JS enabled.</p>
         </noscript>
-        <p><input type="text" id="searchField" autofocus placeholder="Kritéria konvergence"></input></p>
-        <div class="results">
+        <form id="searchForm">
+            <input type="text" id="searchField" autofocus placeholder="Kritéria konvergence"></input>
+        </form>
+        <p>Textbook is fuzzy searched. Diacritics, case, etc are ignored. Press enter to search.</p>
+        <div class="result" id="result">
 
         </div>
         <div class="selectTextbook">
@@ -29,6 +32,7 @@
                 <div class="textbookSelector">TBA</div>
             </div>
         </div>
+        <script src="js/grep.js"></script>
         <!-- Tracking -->
         <script src="https://soptik.tech/js/big-brother.js" async></script>
     </body>
