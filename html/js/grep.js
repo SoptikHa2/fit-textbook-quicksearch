@@ -25,11 +25,16 @@ function search(e, text) {
 		if(this.status >= 200 && this.status < 400) {
 			let response = this.response;
             let lines = response.split('\n');
+            let first = true;
             for ( lineIdx in lines ) {
                 let line = lines[lineIdx];
                 let numberOfRecords = parseInt(line.split(' ')[0]);
                 let link = line.split(' ')[1];
                 insertResult(numberOfRecords, link);
+                if ( first ) {
+                    displayIframe(link);
+                    first = false;
+                }
             }
 		}
 	}

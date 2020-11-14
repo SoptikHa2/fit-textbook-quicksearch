@@ -10,14 +10,14 @@
     </head>
     <body>
         <h1>FIT Textbook Search</h1>
-        <p>Make sure you are authenticated and have access to the textbook.</p>
+        <p>Make sure you are authenticated and have access to the textbook. Log into <a href="https://marast.fit.cvut.cz/" target="_blank">Marast</a>.</p>
         <noscript>
             <p style="color: red;">This site will not work without JS enabled.</p>
         </noscript>
         <form id="searchForm">
             <input type="text" id="searchField" autofocus placeholder="Kritéria konvergence"></input>
         </form>
-        <p>Textbook is searched using grep with regex. Do not mistype. Space = OR</p>
+        <p>Textbook is searched using grep with regex. Do not mistype. Search terms separated by space are ORed.</p>
         <div class="resultPage">
             <div class="result" id="result">
             </div>
