@@ -33,6 +33,10 @@ case $request in
                 searchResult="$(./ZMA.sh "$searchTerm")"
                 printf 'HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nAccess-Control-Allow-Origin: *\r\n\r\n%s' "$searchResult"
             ;;
+            MLO)
+                searchResult="$(./MLO.sh "$searchTerm")"
+                printf 'HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\nAccess-Control-Allow-Origin: *\r\n\r\n%s' "$searchResult"
+            ;;
             *)
                 printf 'HTTP/1.1 404 Not Found\r\n\r\n%s' "<img src='https://http.cat/404'>"
             ;;
