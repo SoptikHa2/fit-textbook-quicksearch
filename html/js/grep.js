@@ -3,6 +3,15 @@ isSearchRunning = false;
 currentlySelectedTextbook = "ZMA";
 resultDiv = document.getElementById('result');
 
+function changeSelectedTextbook(textbook) {
+    if ( document.getElementById(textbook) == null ) return false;
+
+    document.getElementById(currentlySelectedTextbook).className = "textbookSelector"
+    currentlySelectedTextbook = textbook;
+    localStorage['textbook'] = textbook;
+    document.getElementById(currentlySelectedTextbook).className = "textbookSelector active"
+}
+
 function search(e, text) {
     if (e.preventDefault) e.preventDefault();
     if (isSearchRunning) return false;
@@ -68,3 +77,10 @@ function updateResult(tempName, newName) {
 }
 
 document.getElementById("searchForm").addEventListener("submit", function(e) { search(e, document.getElementById("searchField").value); });
+Array.from(document.getElementsByClassName("textbookSelector")).forEach(e => e.addEventListener("click", function(e) { changeSelectedTextbook(e.target.id) }));
+
+// Check localstorage, and update textbook automatically
+changeSelectedTextbook(localStorage['textbook']);
+
+// Check hash, and update textbook selected by default automatically
+changeSelectedTextbook(location.hash.replace("#", ""));
