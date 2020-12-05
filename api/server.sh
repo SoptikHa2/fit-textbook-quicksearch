@@ -5,6 +5,11 @@ set -euo pipefail
 host=grep.fit.soptik.tech
 IFS=$' \t\n\r'
 
+function log {
+    echo "$(date +'%H:%M'):$1" >> "log/$(date + '%Y-%m-%d')"
+}
+
+
 read -r request destination_and_protocol
 destination=${destination_and_protocol% *}
 
@@ -41,6 +46,7 @@ case $request in
                 printf 'HTTP/1.1 404 Not Found\r\n\r\n%s' "<img src='https://http.cat/404'>"
             ;;
         esac
+        log "$textbookName:$searchTerm"
         ;;
     *)
         printf 'HTTP/1.1 405 Method Not Allowed\r\nAllow: GET, POST\r\n\r\n<img src="https://http.cat/405" />'
