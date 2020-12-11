@@ -6,7 +6,7 @@ host=grep.fit.soptik.tech
 IFS=$' \t\n\r'
 
 function log {
-    echo "$(date +'%H:%M'):$1" >> "log/$(date + '%Y-%m-%d')"
+    echo "$(date +'%H:%M'):$1" >> "log/$(date +'%Y-%m-%d')"
 }
 
 
